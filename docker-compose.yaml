@@ -1,0 +1,9 @@
+version: "3"
+services:
+  test_service:
+    build:
+      context: .
+
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "3000:8000"
